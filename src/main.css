@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: aquamarine;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.NavContainer {
+  width: 100vw;
+  height: 100px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.NavContainer a {
+  color: white;
+  text-decoration: none;
+}
