@@ -209,8 +209,6 @@ export default function HomePowerLines() {
                 />
 
             <Hints gameState={gameState} setGameState={setGameState}/>
-                
-            
             
             {(isMobile && socketRef.current && gameState.gameStarted) && <MobileControls 
                     socketRefCur={socketRef.current}
