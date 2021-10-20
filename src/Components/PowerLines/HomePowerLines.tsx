@@ -220,6 +220,7 @@ export default function HomePowerLines() {
                     gameState={gameState}
                     setGameState={setGameState}
                 /> }
+                
         </div>
     )
 }
