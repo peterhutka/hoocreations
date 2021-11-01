@@ -1,0 +1,598 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Slab:wght@100;200;300;400;500;600;800&display=swap");
+
+:root {
+  --bg1: #04080b;
+  --primary-text: #c9dce9;
+  --accent: #ff570a;
+}
+
+.background {
+  font-family: "Arimo", sans-serif;
+  overflow: hidden;
+}
+
+/*frontpage*/
+.frontFlex {
+  width: 100%;
+  background-color: var(--bg1);
+  color: var(--primary-text);
+  height: 105vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10vh 20vw 15vw 20vw;
+  overflow: hidden;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10vh), 0% 100%);
+  z-index: 50;
+  position: relative;
+}
+
+.frontFlex > * {
+  flex-basis: 33%;
+}
+
+@media (max-width: 300px) {
+  .frontFlex h1 {
+    font-size: 2.3rem;
+  }
+}
+@media (min-width: 600px) {
+  /*.intro {
+    height: 70vh;
+    order: 1;
+  }*/
+  .frontFlex > * {
+    margin: 0 0.5rem;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .name {
+    order: 2;
+  }
+  .headContainer {
+    order: 1;
+  }
+  .intro {
+    order: 3;
+  }
+}
+@media (max-width: 600px) {
+  .frontFlex {
+    flex-direction: column;
+    padding: 5vh 20vw 20vh 20vw;
+  }
+  .frontFlex > * {
+    margin: 0.5rem;
+  }
+}
+.head,
+.headContainer {
+  height: 70vw;
+  width: 70vw;
+  max-width: min(70vh, 70vw);
+  max-height: min(70vh, 70vw);
+}
+
+.head {
+  background-image: url("./head.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 70vw;
+}
+
+.headContainer {
+  border-radius: 0%;
+  overflow: hidden;
+  flex-shrink: 0.5;
+  border: 0.14rem solid var(--primary-text);
+  border-radius: 0 50% 0 0;
+}
+
+.name {
+  font-size: 1.5rem;
+  justify-self: start;
+  background-color: var(--primary-text);
+  color: var(--bg1);
+  padding: 1rem;
+  width: 70vw;
+  flex-shrink: 0.5;
+  /*display: flex;
+  flex-direction: column;
+  justify-content: space-around;*/
+}
+
+h1 {
+  transform: translateX(150%);
+  opacity: 0;
+  animation: nameFlow 400ms forwards;
+  line-height: 2.8rem;
+  font-family: "Roboto Slab", serif;
+}
+h2 {
+  font-family: "Roboto Slab", serif;
+}
+.name h1 span {
+  color: var(--accent);
+}
+.name h1:nth-child(2) {
+  animation-delay: 150ms;
+}
+.name h1:nth-child(3) {
+  animation-delay: 300ms;
+}
+
+.intro {
+  border: 0.14rem solid var(--primary-text);
+  padding: 1rem 1rem;
+  width: 70vh;
+  max-width: min(70vh, 70vw);
+  line-height: 1.5rem;
+}
+.ctaIntro {
+  background-color: var(--accent);
+  color: var(--bg1);
+  margin-top: 1rem;
+  padding: 0.4rem 0.6rem;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@keyframes nameFlow {
+  from {
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/*education*/
+
+.edu svg {
+  fill: var(--bg1);
+}
+
+.edu h1 {
+  font-size: 1.4rem;
+  margin-bottom: 0.2rem;
+}
+.edu h2 {
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  margin-top: 1.1rem;
+}
+.edu p {
+  font-size: 0.9rem;
+}
+
+.edu {
+  position: relative;
+  background-color: var(--primary-text);
+  min-height: 80vh;
+  color: var(--primary-text);
+  padding-bottom: 4vh;
+  z-index: 1;
+  position: relative;
+  padding-top: 10vh;
+  margin-top: -10vh;
+}
+
+.education {
+  border: var(--primary-text) solid 0.15rem;
+  margin: 10vh 8vw 0 24vw;
+  padding: 6vw 8vw;
+  background-color: var(--bg1);
+  line-height: 1.4rem;
+  position: relative;
+
+  transform: translateX(100%);
+}
+
+/*
+.education::before {
+  content: "";
+  width: 4rem;
+  height: 4rem;
+  top: -2rem;
+  border: var(--primary-text) solid 0.15rem;
+  position: absolute;
+  z-index: -1;
+}*/
+
+.education::after {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  bottom: 2rem;
+  right: -1rem;
+  border: var(--primary-text) solid 0.15rem;
+  position: absolute;
+  background-color: var(--accent);
+}
+
+.experience {
+  border: var(--primary-text) solid 0.15rem;
+  margin: 10vw 15vw 10vh 5vw;
+  padding: 8vw;
+
+  background-color: var(--bg1);
+  line-height: 1.4rem;
+  position: relative;
+  transform: translateX(-100%);
+}
+/*
+.experience::before {
+  content: "";
+  width: 4rem;
+  height: 4rem;
+  top: 18rem;
+  right: -2rem;
+  border: var(--primary-text) solid 0.15rem;
+  position: absolute;
+  z-index: -1;
+}*/
+
+.experience::after {
+  content: "";
+  width: 2.5rem;
+  height: 2.5rem;
+  top: 1rem;
+  right: 1rem;
+  border: var(--primary-text) solid 0.15rem;
+  position: absolute;
+  background-color: var(--accent);
+}
+
+.examples {
+  background-color: var(--primary-text);
+  color: var(--bg1);
+  padding-bottom: 10vh;
+  /*overflow: auto;*/
+}
+
+.examples .wrapper {
+  position: relative;
+}
+
+@media (min-width: 600px) {
+  .examples .wrapper {
+    width: 600px;
+  }
+  .examples {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.examples h1 {
+  margin: 0 5%;
+  padding: 2vh 0;
+}
+
+.PLImages {
+  position: relative;
+}
+
+.PLImages img {
+  position: absolute;
+}
+
+.PLImages img:nth-child(1) {
+  width: min(40vw, 225px);
+  z-index: 2;
+  top: 10vh;
+  left: 55%;
+}
+.PLImages img:nth-child(2) {
+  width: min(80vw, 550px);
+  z-index: 1;
+  top: 4%;
+  left: 5%;
+}
+
+.textArea {
+  height: fit-content;
+  position: relative;
+  margin-left: 5%;
+  width: 45%;
+  margin-top: min(60vw, 400px);
+}
+.textArea a {
+  padding: 0.5rem 1rem;
+  background-color: var(--accent);
+  display: block;
+  margin: 1vh 0;
+  text-align: center;
+  text-decoration: none;
+  color: var(--bg1);
+  font-weight: bold;
+  display: inline-block;
+  width: 100%;
+}
+.examples p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (max-width: 350px) {
+  .textArea > p {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+  }
+  .textArea > a {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+  .experience::after {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.skills {
+  background-color: var(--accent);
+  padding: max(4vh, 1rem) 5vw;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.skills::after {
+  content: "";
+  width: 5vw;
+  height: 5vw;
+  background-color: var(--primary-text);
+  position: absolute;
+  top: 4%;
+  left: 25vw;
+  z-index: 100;
+  /*border: 0.2rem solid var(--bg1);*/
+  transform: rotate(45deg);
+}
+.skills::before {
+  content: "";
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--primary-text);
+  position: absolute;
+  top: -2rem;
+  left: 75%;
+  z-index: 100;
+  /*border: 0.2rem solid var(--bg1);*/
+  transform: rotate(45deg);
+}
+.skills h1 {
+  margin-bottom: 1rem;
+  font-size: 3rem;
+  text-align: center;
+}
+.skills h2 {
+  margin: 1rem 0 0.5rem 0;
+  text-align: center;
+}
+
+.skills a {
+  background-color: var(--primary-text);
+  padding: 0.6rem 0.6rem;
+  font-size: 1.2rem;
+  margin: 0 auto 1rem auto;
+  clip-path: polygon(
+    17% 0,
+    70% 0%,
+    100% 0,
+    100% 70%,
+    88% 100%,
+    30% 100%,
+    0 100%,
+    0% 30%
+  );
+}
+.skills p:nth-child(2) {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  margin: 0.5rem 0 1rem 0;
+  width: fit-content;
+  text-align: center;
+  clip-path: polygon(
+    19% 14%,
+    100% 0,
+    92% 19%,
+    100% 68%,
+    86% 96%,
+    78% 82%,
+    11% 100%,
+    20% 89%,
+    0 80%,
+    8% 1%
+  );
+  border: none;
+}
+
+.skills p {
+  text-align: center;
+  line-height: 1.4rem;
+  margin-bottom: 0.4rem;
+  border-left: 0.2rem solid var(--bg1);
+  padding-left: 0.5rem;
+}
+.skills span {
+  font-weight: bold;
+  color: var(--primary-text);
+  background-color: rgba(0, 0, 0, 0.2);
+  padding: 0.3rem;
+  clip-path: polygon(
+    10% 0,
+    70% 4%,
+    100% 0,
+    97% 4%,
+    100% 100%,
+    59% 89%,
+    0 100%,
+    0 35%
+  );
+}
+
+.interests {
+  color: var(--primary-text);
+  display: flex;
+  flex-direction: column;
+}
+
+.interests {
+  padding: 1rem;
+}
+.interests p {
+  line-height: 1.6rem;
+}
+
+.interests h1 {
+  margin: 0.6rem 0 0.5rem 0;
+}
+.interests b {
+  color: var(--accent);
+}
+
+.interests h3 {
+  position: relative;
+  text-align: center;
+  margin: 1rem 0 1rem 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1rem 1.2rem;
+}
+
+.interests a {
+  text-decoration: none;
+  color: var(--primary-text);
+  padding: 0.8rem 1.2rem;
+  background-color: var(--accent);
+
+  display: inline-block;
+  width: fit-content;
+  align-self: center;
+  font-size: 1.2rem;
+}
+
+.contact {
+  background-color: var(--bg1);
+  color: var(--primary-text);
+  padding: 1rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact .wrapper {
+  max-width: 640px;
+}
+.contact::before {
+  content: "@";
+  color: var(--accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.8rem;
+  font-weight: bold;
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--bg1);
+  z-index: 100;
+  position: absolute;
+  border: 0.2rem solid var(--accent);
+  top: -2.5rem;
+  right: 1rem;
+  transform: rotate(27deg);
+}
+
+.contact h1 {
+  margin-bottom: 1rem;
+}
+.contact input,
+.contact textarea {
+  background-color: var(--primary-text);
+  margin: 0.5rem 0 1.5rem 0;
+  width: 100%;
+  color: var(--bg1);
+}
+.contact textarea {
+  height: 6rem;
+  font-size: 1rem;
+}
+.contact button {
+  display: block;
+  text-decoration: none;
+  text-transform: none;
+  font-family: "Arimo", sans-serif;
+  width: 100%;
+  padding: 1rem 1.4rem;
+  font-size: 1.2rem;
+  background-color: var(--accent);
+  color: var(--primary-text);
+  border: none;
+}
+
+@media (min-width: 600px) {
+  /*.frontFlex {
+    padding: 10vh 10vw;
+  }*/
+  .name {
+    order: 1;
+    height: 35vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intro {
+    order: 2;
+    height: 35vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .headContainer {
+    order: 3;
+    height: 35vh;
+    width: 35%;
+    flex: 0 0 auto;
+  }
+  .head {
+    height: 100%;
+    width: 100%;
+  }
+}
+@media (min-width: 600px) {
+  .frontFlex {
+    padding: 10vw calc(calc(100% - 850px) / 2) 20vw calc(calc(100% - 850px) / 2);
+  }
+  .interests {
+    padding-right: calc(calc(100% - 600px) / 2);
+    padding-left: calc(calc(100% - 600px) / 2);
+    text-align: center;
+  }
+  .education,
+  .experience {
+    margin-left: 45%;
+  }
+}
+
+.education,
+.experience {
+  max-width: 550px;
+}
+
+.interests > * {
+  max-width: 550px;
+}
+a,
+button,
+.btn {
+  cursor: pointer;
+}

@@ -12,5 +12,10 @@ export interface GameStateInterface{
         letter: null | "A" | "B",
         timeLastUpdated: number | null,
         opponentsMovesLeft: number,
-        hintNumber: number
+        hintNumber: number,
+        ranked: {
+            isRanked: boolean,
+            name: string | null;
+            elos: number[]
+        }
     }

@@ -38,6 +38,8 @@ import Timer from './Timer';
 import PowerlinesCanvas from './PowerlinesCanvas';
 import { initialGameState } from './functions/initialGameState';
 import Hints from './Hints';
+import Names from './Names';
+import ioHandle_rankedInfo from './functions/io/ioHandle_rankedInfo';
 
 export default function HomePowerLines() {
     const {user} = useContext(myContext)
@@ -81,7 +83,7 @@ export default function HomePowerLines() {
     }
 
     function updateTime(){
-        if(!gameState.timeLastUpdated) return
+        if(!gameState.timeLastUpdated || !gameState.gameStarted ) return
         
         const temp = {
             player: gameState.toMove ? gameState.time.player - (Date.now() - gameState.timeLastUpdated) : gameState.time.player,
@@ -89,8 +91,6 @@ export default function HomePowerLines() {
         }
         
         //setDisplayedTime(temp)
-
-        console.log("time", gameState.time.player, (Date.now() - gameState.timeLastUpdated))
         setDisplayedTime((prev)=>temp)
     }
 
@@ -167,6 +167,7 @@ export default function HomePowerLines() {
             ioHandle_pwaResponse    (socketRef.current, setMessage)
             ioHandle_gameStarted    (socketRef.current, setMessage,  gameState, setGameState)
             ioHandle_gameStartsIn   (socketRef.current, setMessage, setGameState)
+            ioHandle_rankedInfo     (socketRef.current, setGameState)
             ioHandle_mapInitialized (socketRef.current, setMessage, contextRef, gridRef, yourPositionRef, gameState)
             ioHandle_gridUpdate     (socketRef.current, gridRef, contextRef, yourPositionRef, updatePosition,   contextEffectsRef, gameState, setGameState)
             ioHandle_alreadyMoved   (socketRef.current, setMessage)
@@ -194,6 +195,8 @@ export default function HomePowerLines() {
                 && <Timer gameState={gameState} displayedTime={displayedTime}/> }            
             {gameState.gameStarted 
                 && <MovesCounter movesLeft={gameState.movesLeft} movesTotal={gameState.movesTotal} hintNumber={gameState.hintNumber}/>}
+             {gameState.gameStarted 
+                && <Names gameState={gameState} />}
             {(!gameState.gameStarted && !gameState.pwfInLobby ) 
                 && <StartGameButtons socketRef={socketRef} gameState={gameState} setGameState={setGameState}/>}
 

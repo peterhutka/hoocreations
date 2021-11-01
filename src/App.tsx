@@ -11,6 +11,7 @@ import {PrivateRoute} from './Components/PrivateRoute';
 import ProtectedTest2 from './Components/ProtectedTest2';
 import PowerLines from './Components/PowerLines/PowerLines';
 import OnlyPublicRoute  from './Components/OnlyPublicRoute';
+import Portfolio from './Components/Portfolio/Portfolio';
 
 function App() {
   const {user} = useContext(myContext)
@@ -23,6 +24,7 @@ function App() {
           <PrivateRoute path="/protectedtest2" component={ProtectedTest2}/>
           <Route path="/" exact component={HomePage} />  
           <Route path="/powerlines" component={PowerLines} />
+          <Route path="/portfolio" component={Portfolio} />
           <OnlyPublicRoute path="/login" component={Login}/>
           
           {

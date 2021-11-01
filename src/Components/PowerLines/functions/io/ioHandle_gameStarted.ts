@@ -14,13 +14,6 @@ export function ioHandle_gameStarted (
 
    socket.on("gameStarted", (playerToMove: boolean)=>{
         setMessage(`${playerToMove ? ("Your Move 30s/30s") : "Wait for Opponent 30s" }`)
-        //setGameStarted(true)
-        /*setGameState(() => {
-            return {
-                ...gameState,
-                gameStarted: true
-            }
-        })*/
 
         setGameState((prev) => {
             return {
@@ -31,18 +24,11 @@ export function ioHandle_gameStarted (
                 letter: (playerToMove ? "A" : "B"),
                 timeLastUpdated: Date.now(),
                 time: {
-                    player: 20000,
-                    opponent: 20000
+                    player: 40000,
+                    opponent: 40000
                 }
-                
             }
-        })
-        //setPwfInLobby(false)
-        //setToMove(playerToMove) 
-
-        
-        //setLetter(playerToMove ? "A" : "B")
-        
+        })        
     })
 }
 

@@ -14,5 +14,10 @@ export const initialGameState: GameStateInterface = {
     letter: null,
     timeLastUpdated: null,
     opponentsMovesLeft: 1, 
-    hintNumber: 0
+    hintNumber: 0,
+    ranked: {
+            isRanked: false,
+            name:  null,
+            elos: []
+        }
 }

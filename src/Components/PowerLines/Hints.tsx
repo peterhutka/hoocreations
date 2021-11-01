@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { GameStateInterface } from './PowerlinesInterfaces'
 import styles from './styles.module.css'
 
@@ -30,16 +30,19 @@ export default function Hints(props: {
             }
         })
     }
-    if(props.gameState.hintNumber ===1 &&props.gameState.onBase ){
-        props.setGameState((prev)=>{
-            return {
-                ...prev,
-                hintNumber: 2
-            }
-        })
-    }
+    useEffect(()=>{
+        if(props.gameState.hintNumber ===1 &&props.gameState.onBase ){
+            props.setGameState((prev)=>{
+                return {
+                    ...prev,
+                    hintNumber: 2
+                }
+            })  
+        }
+    }, )
+    
 
-    return props.gameState.hintNumber < 8 ? (
+    return (props.gameState.hintNumber < 8 && props.gameState.gameStarted) ? (
         <div className={styles.hints} onClick={handleClick} onTouchEnd={handleClick}>
             {hints[props.gameState.hintNumber]}
         </div>

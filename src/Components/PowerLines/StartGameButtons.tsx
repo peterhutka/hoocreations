@@ -25,7 +25,6 @@ export default function StartGameButtons(
 
     const {user} = useContext(myContext)
 
-    console.log("rendering ")
     return (
         <div className={`${styles.startGameWrapper} `}>
             <div className={` ${styles.playButton}`} onClick={(e) => handlePlayWithAnybody(e, props.socketRef)}> Play with <span className={styles.accent}>Stranger</span></div>

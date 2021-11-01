@@ -33,30 +33,28 @@ export default function Timer(props: {
         backgroundColor: "#339989",
         width:  widthA + "%",
         //width: "35%"
-        padding: "2%",
+        
         color: colorA,
-        transition: `width 1000ms linear`,
-        fontSize: "2rem"
+        //alignSelf: 'flex-start'
         
     }
     const b = {
         backgroundColor: "#f96e46",
         width: widthB + "%",
-        padding: "2%",
-        alignSelf: 'flex-end',
+        
+        //alignSelf: 'flex-end',
         color: colorB,
-        transition: `width 1000ms linear`,
-        fontSize: "2rem"
+        
         
     }
 
 
     return (
         <div className={styles.timerWrapper}>
-            <div className={`${styles.playerTimer}` } style={a}>
-                <div>{timeA}</div>
+            <div className={`${styles.playerWrapper}` } style={a}>
+                <div className={styles.playerATimer}>{timeA}</div>
             </div>
-            <div className={`${styles.playerTimer}`}  style={b}>
+            <div className={`${styles.playerWrapper}`}  style={b}>
                 <div className={styles.playerBTimer}>{timeB}</div>
             </div>
         </div>
