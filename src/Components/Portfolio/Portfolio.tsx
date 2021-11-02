@@ -6,9 +6,6 @@ import PLlaptop from './PLlaptop.png'
 
 import styles from './styles/portfolio.module.css'
 
-
-
-
 export default function Portfolio() {
 
     const [navbarTop, setNavbarTop] = useState<boolean>(false)
@@ -125,11 +122,6 @@ function Edu(props:{
             const bodyRect = document.body.getBoundingClientRect().top;
             const educationRect = education.current.getBoundingClientRect().top;
             const experienceRect = experience.current.getBoundingClientRect().top;
-            /*
-            const eduTranslate = (Math.abs(experienceRect) > 300)? (Math.abs(educationRect) - 300) * 0.25 : 0
-            const expTranslate = (Math.abs(experienceRect) > 300)? (Math.abs(experienceRect) - 300) * 0.25 : 0
-*/
-
             
             const eduTranslate =  (educationRect- 60)  * 0.1 
             const expTranslate =  (experienceRect- 200)   * 0.1 
@@ -145,9 +137,6 @@ function Edu(props:{
 
     return (
         <div className={`${styles.section} ${styles.edu}`} ref={props.scrollRef}>
-            {/*<svg viewBox="0 0 500 70" preserveAspectRatio="none">
-                <path d="M-2.25,36.02 C116.25,56.73 271.49,-49.98 506.77,63.64 L500.00,0.00 L0.00,0.00 Z"></path>
-            </svg>*/}
             <div className={styles.education}  ref={education}>
                 <h1>EDUCATION</h1>
                 <h2>2012 - 2019</h2>
@@ -159,7 +148,7 @@ function Edu(props:{
                 <p>Clinic of Psychiatry, University Hospital of Martin,</p>
                 <p>Post Graduate Study, Jessenius Faculty of Medicine in Martin, <br/>Commenius University in Bratislava</p>
                 <h2>2019 - 2020</h2>
-                <p>Sporadically learning javascript, creating simple projects</p>
+                <p>Sporadically learning JavaScript, creating simple projects</p>
                 <h2>2020 - now</h2>
                 <p>Dedicated significant part of free time into learning web technologies in order to switch career.</p>
             </div>
@@ -179,14 +168,14 @@ function Skills(props:{
             <p>Most of these skills are demonstrated in my full stack portfolio project:</p>
             <a  onClick={(e)=> props.handleClick(e, "example")}>POWERLINES</a>
             <h2>PROGRAMMING </h2>
-            <p>javascript</p>
-            <p>react</p>
-            <p>node.js</p>
-            <p>express.js</p>
-            <p>typescript</p>
-            <p>html</p>
-            <p>css</p>
-            <p>mongodb</p>
+            <p>JavaScript</p>
+            <p>React</p>
+            <p>Node.js</p>
+            <p>Express.js</p>
+            <p>TypeScript</p>
+            <p>HTML</p>
+            <p>CSS</p>
+            <p>MongoDB</p>
             <h2>NON-PROGRAMMING</h2>
             <p >problem solving and critical thinking, not just cliche, I truly love problem solving hyperfocus</p>
             <p >working at psychiatry teaches you range of <span>communication skills</span> and <span>patience</span></p>
@@ -254,10 +243,10 @@ function Powerlines(props:{
                 </div>
                 <div className={styles.textArea}>
                         <p>Full-stack app, online multiplayer game with authentication built using React, Node, Typescript, Web Sockets and MongoDB.</p>
-                        <p>For live demo send it to friend or open one incognito tab. Might take few seconds for heroku server to wake up.</p>
-                        <a href="">LIVE DEMO</a>
-                        <a href="">FRONTEND CODE </a>
-                        <a href="">BACKEND CODE</a>
+                        <p>For live demo send it to friend or open one incognito tab. <b>Might take few seconds for heroku server to wake up.</b></p>
+                        <a href="/powerlines">LIVE DEMO</a>
+                        <a href="https://github.com/peterhutka/hoocreations">FRONTEND CODE </a>
+                        <a href="https://github.com/peterhutka/HooProjectsServer">BACKEND CODE</a>
                         
                     </div>
                 </div>

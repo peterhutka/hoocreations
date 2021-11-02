@@ -13,7 +13,7 @@ export default function AdminPage() {
     const [selectedUser, setSelecetedUser] = useState<string>()
 
     useEffect(()=>{
-        axios.get("http://localhost:8080/getallusers", {
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/getallusers`, {
             withCredentials: true
         }).then((res: AxiosResponse )=> {
             setData(res.data.filter((item: UserInterface)=>{
@@ -31,7 +31,7 @@ export default function AdminPage() {
                 }
             })
         if(userId!){
-            axios.post("http://localhost:8080/deleteuser", {
+            axios.post(`${process.env.REACT_APP_SERVER_URL}/deleteuser`, {
                 id: userId!
                 }, {
                 withCredentials: true

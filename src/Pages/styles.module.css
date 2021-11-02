@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Roboto+Slab:wght@100;200;300;400;500;600;800&display=swap");
+
+* {
+  font-family: Roboto Slab, sans-serif;
+}
+
+.homeWrapper {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(190, 190, 190);
+  flex-direction: column;
+}
+
+.homeWrapper h2 {
+  margin-top: 3rem;
+  margin-bottom: 0.6rem;
+  color: rgb(26, 26, 26);
+}
+
+.homeWrapper a {
+  text-decoration: none;
+  color: rgb(26, 26, 26);
+  background-color: rgb(153, 153, 153);
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  font-family: sans-serif;
+}

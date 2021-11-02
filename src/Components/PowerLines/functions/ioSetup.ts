@@ -6,7 +6,7 @@ import drawGrid from "./drawGrid";
 export function ioSetup(
     io: (uri: string, opts?: Partial<ManagerOptions & SocketOptions>)=> Socket, //(+2 overloads),  
 ){
-    let socket = io("http://localhost:8080", {
+    let socket = io(`${process.env.REACT_APP_SERVER_URL}`, {
             transports: ['websocket'],
             withCredentials: true,
         });

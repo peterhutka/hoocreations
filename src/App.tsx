@@ -21,25 +21,10 @@ function App() {
     <>
       <Router>
         <Switch>
-          <PrivateRoute path="/protectedtest2" component={ProtectedTest2}/>
+          
           <Route path="/" exact component={HomePage} />  
           <Route path="/powerlines" component={PowerLines} />
           <Route path="/portfolio" component={Portfolio} />
-          <OnlyPublicRoute path="/login" component={Login}/>
-          
-          {
-            user ? (
-              <>
-                {user.isAdmin ? (<Route path="/admin" exact component={AdminPage} />) : null}              
-                <Route path="/profile" exact component={Profile} />
-            </>
-          ) : (
-            <>
-            
-            <Route path="/register" exact component={Register} />
-            </>
-          )
-          }          
         </Switch>
       </Router>
 

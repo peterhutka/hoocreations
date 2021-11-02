@@ -13,7 +13,7 @@ export default function LeaderBoard() {
 
     useEffect(()=>{
         
-        axios.get("http://localhost:8080/leaderboard", {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/leaderboard`, {withCredentials: true})
         .then((res: AxiosResponse) => {   
             console.log(res.data)
             let temp = res.data

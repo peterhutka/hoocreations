@@ -6,7 +6,7 @@ export default function Register() {
     const [password, setPassword] = useState<string>("")
 
     const register = () => {
-        axios.post("http://localhost:8080/register", {
+        axios.post(`${process.env.REACT_APP_SERVER_URL}/register`, {
             username,
             password
         }, {

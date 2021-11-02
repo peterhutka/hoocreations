@@ -10,7 +10,7 @@ export default function NavBar() {
 
     //Logout
     const logout = () => {
-        axios.get("http://localhost:8080/logout", {
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/logout`, {
             withCredentials: true
         }).then((res: AxiosResponse) => {
             if(res.data === "logged out") {

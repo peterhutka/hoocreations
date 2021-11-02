@@ -15,7 +15,7 @@ export default function Context(props: PropsWithChildren<any>) {
         }, 
         history?: any
     ) => {
-        axios.get("http://localhost:8080/user", {withCredentials: true})
+        axios.get(`${process.env.REACT_APP_SERVER_URL}/user`, {withCredentials: true})
         .then((res: AxiosResponse) => {   
             setUser(res.data)  
             if(locationObject?.to && history){

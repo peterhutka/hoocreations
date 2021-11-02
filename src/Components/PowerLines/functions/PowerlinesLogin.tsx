@@ -20,7 +20,7 @@ const Login = (props: any) => {
 
     const login = (e: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
         e.preventDefault()
-        axios.post("http://localhost:8080/login", {
+        axios.post(`${process.env.REACT_APP_SERVER_URL}/login`, {
             username,
             password
         }, {
