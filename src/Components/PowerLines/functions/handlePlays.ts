@@ -26,7 +26,6 @@ export function handlePlayMatched(
 ){
     e.preventDefault()
     if(socketRef.current) {
-        console.log("emmiting")
         socketRef.current.emit("pwa_matched")
     }
 }

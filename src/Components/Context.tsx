@@ -19,7 +19,6 @@ export default function Context(props: PropsWithChildren<any>) {
         .then((res: AxiosResponse) => {   
             setUser(res.data)  
             if(locationObject?.to && history){
-                console.log("loc obj", locationObject.to)
                 history.push(locationObject.to)
             }           
         })

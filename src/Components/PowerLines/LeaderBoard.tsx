@@ -5,7 +5,6 @@ import { myContext } from '../Context'
 import styles from "./styles.module.css"
 
 export default function LeaderBoard() {
-    console.log("LEADERBOARD")
 
     const [users, setUsers] = useState([])
     const {user, updateUser} = useContext(myContext)
@@ -15,7 +14,6 @@ export default function LeaderBoard() {
         
         axios.get(`${process.env.REACT_APP_SERVER_URL}/leaderboard`, {withCredentials: true})
         .then((res: AxiosResponse) => {   
-            console.log(res.data)
             let temp = res.data
             temp.sort( compare );
             setUsers(temp)

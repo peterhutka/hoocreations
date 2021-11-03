@@ -15,13 +15,11 @@ import Portfolio from './Components/Portfolio/Portfolio';
 
 function App() {
   const {user} = useContext(myContext)
-  console.log("App rendering **************")
-    
+
   return (
     <>
       <Router>
         <Switch>
-          
           <Route path="/" exact component={HomePage} />  
           <Route path="/powerlines" component={PowerLines} />
           <Route path="/portfolio" component={Portfolio} />

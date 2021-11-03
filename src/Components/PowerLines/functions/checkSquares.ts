@@ -31,8 +31,6 @@ export function checkSqareAndMove(yourPositionRef: React.MutableRefObject<number
             (gridRef.current[yourPositionRef.current].x === 0 && positionChange === -36) ||
             (gridRef.current[yourPositionRef.current].x === 35 && positionChange === 36) 
             ) {
-                        
-            console.log("W border", gridRef.current[yourPositionRef.current].x)
             return
         }
         //check for wall or head 
@@ -73,7 +71,6 @@ export function checkSquareForWall( nextPos: number | null, gridRef: React.Mutab
 
     // if new sqare is occupied by wall or head of other player return false
     if((newSqare.isHead) || (newSqare.type === "W")){
-        console.log("occupied", newSqare)
         return false
     } 
     else {

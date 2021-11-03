@@ -15,8 +15,7 @@ const OnlyPublicRoute: React.ComponentType<any> = ({
       render={(props) => {  
         // logic for authenticated user to access /app part goes here.
         // e.g. check if user is logged-in logic.
-        
-
+      
         return (!user) ? (  
           <Component {...props} />  
         ) : (  

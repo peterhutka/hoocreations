@@ -38,7 +38,6 @@ export default function PlayWithFriendsLobby(props: any) {
     }
     function handleClick(e: React.MouseEvent<HTMLDivElement, MouseEvent>){
         e.preventDefault()
-        console.log(inputValue)
         if(props.socketRef.current) props.socketRef.current.emit("pwf_join", inputValue)
     }
 

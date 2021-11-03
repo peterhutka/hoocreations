@@ -9,7 +9,6 @@ export default function ioHandle_rankedInfo(
     
 
     socket.on("rankedInfo", (data: any)=>{
-        console.log(data)
         setGameState(prev=>{
         return {
             ...prev,

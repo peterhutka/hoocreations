@@ -9,7 +9,6 @@ export function stopMove(
     setGameState: React.Dispatch<React.SetStateAction<GameStateInterface>>
     
 ){
-    console.log("q", gameState.movesLeft)
     if(gameState.movesLeft < gameState.movesTotal){
         socket.emit("stopMove")
         

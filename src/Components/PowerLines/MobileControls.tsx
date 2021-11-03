@@ -37,7 +37,6 @@ export default function MobileControls(
 
     function handleClick(e: React.MouseEvent<HTMLParagraphElement, MouseEvent>, direction: string){
         e.preventDefault()
-        console.log("dir", direction)
         if(!props.gameState.letter) return
 
         if(direction === "UP") {

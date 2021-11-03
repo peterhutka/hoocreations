@@ -19,7 +19,6 @@ export function ioHandle_gridUpdate (
 ){
     socket.on("gridUpdate", (data: any)=>{
         updateGrid(data, false) 
-        console.log("ML from server: ", data.movesLeft)
         //setOnBase(data.grid[data.position].type === "B")
         setGameState((prev)=>{
             return{

@@ -127,7 +127,6 @@ export default function HomePowerLines() {
 
 
     useEffect(() => {      
-        //console.log("USE EFFECT with NO brackets - every time")
 
         setUpCanvas(canvasRef, contextRef)
         setUpCanvas(canvasEffectsRef, contextEffectsRef)
@@ -158,7 +157,6 @@ export default function HomePowerLines() {
     }, [gameState])
 
     useEffect( () => {
-        //console.log("USE EFFECT with brackets - just once")
         // todo - merge time and timeLastUpdated and maybe displayed time to one object , displayedtime
 
         socketRef.current = ioSetup(io);

@@ -16,14 +16,12 @@ export function ioHandle_mapInitialized (
 ){
     
     socket.on("mapInitialized", ({grid, info}: any)=>{
-        console.log("waiting")
         drawGrid(grid, contextRef.current, gameState)
         gridRef.current = grid
         if(gridRef.current){
             gridRef.current.forEach(item =>{
                 if(item.player === info.player){
                     yourPositionRef.current = item.y + item.x * 36
-                    console.log("POSITION", yourPositionRef.current)
                 }
             })
         }

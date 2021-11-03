@@ -16,7 +16,6 @@ export function takeBase (
 ){
     if(!gridRef.current ) return
     if(typeof yourPositionRef.current !== "number") return
-    console.log("taking base")
 
     const pos = yourPositionRef.current
     if(gridRef.current[pos].type !== "B") {
