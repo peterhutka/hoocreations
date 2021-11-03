@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styles from './styles.module.css'
 
 export default function HomePage() {
+    
     return (
         <div className={styles.homeWrapper}>
             <h2>Work In Progress....</h2>
