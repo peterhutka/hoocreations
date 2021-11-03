@@ -191,8 +191,8 @@ function Interests(props:{
     return (
         <div className={`${styles.interests}`}>
             <h1>INTERESTS</h1>
-            <p>In the near future I'm interested in mastering range of web technologies, including <b>React</b>, <b>Typescript</b>, <b>CSS</b> and learn more about software <b></b>testing, software <b>architecture</b>, <b>data structures</b> and <b>algorythms</b>. I'm also planning to use my knowledge of react for creating mobile apps by learning <b>React Native</b>.</p>
-            <p>Outside of programming I'm in love with <b>music production</b>, <b>piano</b> and <b>photography</b>.</p>
+            <p>In the near future I'm interested in mastering range of web technologies, including <b>React</b>, <b>Typescript</b>, <b>CSS</b> and learn more about software <b></b>testing, software <b>architecture</b>, <b>data structures</b> and <b>algorithms</b>. I'm also planning to use my knowledge of react for creating mobile apps by learning <b>React Native</b>.</p>
+            <p>Besides programming I'm in love with <b>music production</b>, <b>piano</b> and <b>photography</b>.</p>
             <h1>MOTIVATION</h1>
             <p>Since I saw the first computer in my life (around 1999) I was fascinated by technology. At about 13 y.o. I discovered Adobe Flash and ActionScript and created few very simple buggy games. Long story short, I decided to study medicine and become doctor. After 6 years of hard studying, I realized that <b>my obsession in technology in not matched by my interest in medicine</b>. After this realization, I used a little free time I had to learn web development.</p>
             <h3>That's why I am interested in working at your company </h3>
