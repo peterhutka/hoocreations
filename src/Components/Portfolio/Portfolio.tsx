@@ -195,7 +195,6 @@ function Interests(props:{
             <p>Besides programming I'm in love with <b>music production</b>, <b>piano</b> and <b>photography</b>.</p>
             <h1>MOTIVATION</h1>
             <p>Since I saw the first computer in my life (around 1999) I was fascinated by technology. At about 13 y.o. I discovered Adobe Flash and ActionScript and created few very simple buggy games. Long story short, I decided to study medicine and become doctor. After 6 years of hard studying, I realized that <b>my obsession in technology in not matched by my interest in medicine</b>. After this realization, I used a little free time I had to learn web development.</p>
-            <h3>That's why I am interested in working at your company </h3>
             <a onClick={(e)=> props.handleClick(e, "contact")}>CONTACT ME</a>
 
         </div>

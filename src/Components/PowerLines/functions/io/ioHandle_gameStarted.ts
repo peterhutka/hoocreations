@@ -24,8 +24,8 @@ export function ioHandle_gameStarted (
                 letter: (playerToMove ? "A" : "B"),
                 timeLastUpdated: Date.now(),
                 time: {
-                    player: 40000,
-                    opponent: 40000
+                    player: 30000,
+                    opponent: 30000
                 }
             }
         })        

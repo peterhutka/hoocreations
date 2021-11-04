@@ -1,14 +1,11 @@
 //todo persist player through localstorige when disconnected
 //todo modal for cookies consent 
 
-import React, {useContext, useEffect, useRef, useState} from 'react'
-import { Link, useLocation } from 'react-router-dom';
+import {useContext, useEffect, useRef, useState} from 'react'
 import { io, Socket } from "socket.io-client";
 import { myContext } from '../Context';
 import drawGrid from './functions/drawGrid';
 import { squareInterface } from '../../Interfaces/Interfaces';
-import { handleKeyDown } from './functions/handleKeyDown';
-import { handlePlayMatched, handlePlayWithAnybody, handlePlayWithFriend } from './functions/handlePlays';
 import { setUpCanvas } from './functions/setUpCanvas';
 import { ioSetup } from './functions/ioSetup';
 import { DefaultEventsMap } from 'socket.io-client/build/typed-events';
@@ -26,8 +23,6 @@ import { drawEffectsGrid } from './functions/drawEffectsGrid';
 //import PlayWithFriends_lobby from './playWithFriends_lobby';
 import PlayWithFriendsLobby from './PlayWithFriendsLobby';
 import MovesCounter from './MovesCounter';
-import { BrowserRouter as Router, Switch, Route, useRouteMatch, } from "react-router-dom"
-import LeaderBoard from './LeaderBoard';
 import MobileControls from './MobileControls';
 import {isMobile} from 'react-device-detect';
 import styles from './styles.module.css'
