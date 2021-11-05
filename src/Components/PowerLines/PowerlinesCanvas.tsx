@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Socket } from 'socket.io-client'
 import { DefaultEventsMap } from 'socket.io-client/build/typed-events'
 import { squareInterface } from '../../Interfaces/Interfaces'
@@ -19,18 +19,28 @@ export default function PowerlinesCanvas(props:{
 
 
 }) {
+    useEffect(()=>{
+        window.addEventListener("keydown", handleUserKeyPress);
+        return () => {
+            window.removeEventListener("keydown", handleUserKeyPress);
+        }
+    })
+
+
+    function handleUserKeyPress(e: KeyboardEvent){
+        if(!props.gameState.gameStarted) return
+        if(!props.socketRef.current) return
+        if(!props.gameState.toMove) return
+        
+        handleKeyDown(e, props.socketRef.current, props.gridRef, props.yourPositionRef, props.contextRef, props.setMessage, props.gameState, props.setGameState )
+    }
+
     return (
         <>
             <div className={styles.canvasWrapper}>
                     <canvas ref={props.canvasRef} className={styles.firstCanvas} >
                     </canvas>
-                    <canvas className={styles.secondCanvas} ref={props.canvasEffectsRef}tabIndex={0} onKeyDown={e =>{
-                        if(!props.gameState.gameStarted) return
-                        if(!props.socketRef.current) return
-                        if(!props.gameState.toMove) return
-                        
-                        handleKeyDown(e, props.socketRef.current, props.gridRef, props.yourPositionRef, props.contextRef, props.setMessage, props.gameState, props.setGameState )
-                    } }>
+                    <canvas className={styles.secondCanvas} ref={props.canvasEffectsRef}tabIndex={0} >
                     </canvas>
             </div>
         </>

@@ -7,7 +7,7 @@ import { stopMove } from "./stopMove"
 import { takeBase } from "./takeBase"
 
 export function handleKeyDown (
-    e: React.KeyboardEvent<HTMLCanvasElement>,
+    e: React.KeyboardEvent<HTMLCanvasElement> | KeyboardEvent,
     socket: Socket<DefaultEventsMap, DefaultEventsMap>,
     gridRef: React.MutableRefObject<squareInterface[] | null>,
     yourPositionRef: React.MutableRefObject<number | null>,

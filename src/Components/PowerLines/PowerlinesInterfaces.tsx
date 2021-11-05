@@ -1,5 +1,6 @@
 export interface GameStateInterface{
         pwfInLobby: boolean;
+        inLobby: boolean;
         time: {
             player: number;
             opponent: number;

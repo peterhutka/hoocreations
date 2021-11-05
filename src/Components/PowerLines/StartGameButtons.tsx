@@ -25,14 +25,23 @@ export default function StartGameButtons(
 
     const {user} = useContext(myContext)
 
-    return (
-        <div className={`${styles.startGameWrapper} `}>
-            <div className={` ${styles.playButton}`} onClick={(e) => handlePlayWithAnybody(e, props.socketRef)}> Play with <span className={styles.accent}>Stranger</span></div>
-            <div className={` ${styles.playButton}`} onClick={(e) => handlePlayWithFriend(e, props.socketRef, props.gameState, props.setGameState)}> Play with <span className={styles.accent}>Friend</span></div>
-            {user ? 
-                <div className={` ${styles.playButton}`} onClick={(e)=> handlePlayMatched(e, props.socketRef)}> Play <span className={styles.accent}>Matched Game</span></div> 
-                : 
-                <div className={`${styles.playButton}`} onClick={(e)=> handleLogin(e)}> <span className={styles.accent}>Login</span> To Play Matched</div>}  
-        </div>
-    )
+
+    if(!props.gameState.inLobby){
+        return (
+            <div className={`${styles.startGameWrapper} `}>
+                <div className={` ${styles.playButton}`} onClick={(e) => handlePlayWithAnybody(e, props.socketRef, props.setGameState)}> Play with <span className={styles.accent}>Stranger</span></div>
+                <div className={` ${styles.playButton}`} onClick={(e) => handlePlayWithFriend(e, props.socketRef, props.gameState, props.setGameState)}> Play with <span className={styles.accent}>Friend</span></div>
+                {user ? 
+                    <div className={` ${styles.playButton}`} onClick={(e)=> handlePlayMatched(e, props.socketRef, props.setGameState)}> Play <span className={styles.accent}>Matched Game</span></div> 
+                    : 
+                    <div className={`${styles.playButton}`} onClick={(e)=> handleLogin(e)}> <span className={styles.accent}>Login</span> To Play Matched</div>}  
+            </div>
+        )
+    } else {
+        return (<div className={`${styles.startGameWrapper} `}>
+                <div className={` ${styles.playButton} ${styles.msg}`} > Wait for opponent to join</div>
+
+        </div>)
+    }
+    
 }

@@ -26,7 +26,8 @@ export function ioHandle_gameStarted (
                 time: {
                     player: 30000,
                     opponent: 30000
-                }
+                },
+                inLobby: false
             }
         })        
     })

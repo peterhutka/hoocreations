@@ -35,6 +35,7 @@ import { initialGameState } from './functions/initialGameState';
 import Hints from './Hints';
 import Names from './Names';
 import ioHandle_rankedInfo from './functions/io/ioHandle_rankedInfo';
+import { ioHandle_disconnect } from './functions/io/ioHandle_disconnect';
 
 export default function HomePowerLines() {
     const {user} = useContext(myContext)
@@ -166,6 +167,7 @@ export default function HomePowerLines() {
             ioHandle_alreadyMoved   (socketRef.current, setMessage)
             ioHandle_roundDone      (socketRef.current, gameState, setGameState)
             ioHandle_endgame        (socketRef.current, setMessage, gameState, setGameState)
+            ioHandle_disconnect     (socketRef.current, setGameState)
         }
         if(socketRef.current){
             ioHandle_roundStarts    (socketRef.current, gameState, setGameState)

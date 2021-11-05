@@ -2,6 +2,7 @@ import { GameStateInterface } from "../PowerlinesInterfaces";
 
 export const initialGameState: GameStateInterface = {
     pwfInLobby: false,
+    inLobby: false,
     time: {
         player: 0, 
         opponent: 0,

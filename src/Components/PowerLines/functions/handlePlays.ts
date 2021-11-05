@@ -2,10 +2,14 @@ import { GameStateInterface } from "../PowerlinesInterfaces"
 
 export function handlePlayWithAnybody(
     e: React.MouseEvent<HTMLSpanElement, MouseEvent>,
-    socketRef: React.MutableRefObject<any>
+    socketRef: React.MutableRefObject<any>,
+    setGameState: React.Dispatch<React.SetStateAction<GameStateInterface>>
     ){
         e.preventDefault()
-        if(socketRef.current) socketRef.current.emit("pwa")
+        if(socketRef.current){
+            socketRef.current.emit("pwa")
+            playerInLobby(setGameState)
+        } 
     }
 
 export function handlePlayWithFriend(
@@ -22,10 +26,22 @@ export function handlePlayWithFriend(
 
 export function handlePlayMatched(
     e: React.MouseEvent<HTMLSpanElement, MouseEvent>,
-    socketRef: React.MutableRefObject<any>
+    socketRef: React.MutableRefObject<any>,
+    setGameState: React.Dispatch<React.SetStateAction<GameStateInterface>>
 ){
     e.preventDefault()
     if(socketRef.current) {
         socketRef.current.emit("pwa_matched")
+        playerInLobby(setGameState)
     }
+}
+
+
+function playerInLobby(setGameState: React.Dispatch<React.SetStateAction<GameStateInterface>>){
+    setGameState( (prev) => {
+                return {
+                    ...prev,
+                    inLobby: true
+                }
+            })
 }
