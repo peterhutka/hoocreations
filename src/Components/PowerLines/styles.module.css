@@ -458,7 +458,22 @@ input {
   background-color: var(--accent-A);
   text-align: center;
   color: var(--light-bg-color);
+  animation: colorChange 500ms alternate;
+  animation-iteration-count: infinite;
+  cursor: pointer;
 }
+
+@keyframes colorChange {
+  from {
+    background-color: #339989;
+  }
+  to {
+    background-color: #f96e46;
+  }
+}
+
+/*  --accent-A: #339989;
+  --accent-B: #f96e46;*/
 
 /*-----------------*/
 .leaderboard {

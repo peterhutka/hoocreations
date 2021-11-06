@@ -10,8 +10,6 @@ export function ioHandle_disconnect (
 
 
 ){
-   
-
     socket.on("disconnect", ()=>{
         setGameState((prev)=>{
             return {
@@ -21,6 +19,9 @@ export function ioHandle_disconnect (
         })
     })
 
+    socket.on("ping", (time: any)=>{
+        console.log("PING: ", Date.now() - time)
+    })
 }
 
 

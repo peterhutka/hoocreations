@@ -272,6 +272,11 @@ h2 {
   padding: 2vh 0;
 }
 
+.examples video {
+  width: 90%;
+  margin: 5%;
+}
+
 .PLImages {
   position: relative;
 }
@@ -443,6 +448,26 @@ h2 {
   color: var(--primary-text);
   display: flex;
   flex-direction: column;
+}
+
+.interests .fallacy {
+  background-color: var(--primary-text);
+  padding: 0.15rem;
+  color: var(--bg1);
+  position: relative;
+  text-decoration: underline;
+}
+.interests .fallacy:hover::before {
+  content: "The Sunk Cost Fallacy describes our tendency to follow through on an endeavor if we have already invested time, effort, or money into it, whether or not the current costs outweigh the benefits.";
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  height: fit-content;
+  width: 15rem;
+  background-color: var(--primary-text);
+  z-index: 50;
+  transform: translateX(-50%) translateY(-115%);
+  padding: 2rem;
 }
 
 .interests {

@@ -157,6 +157,8 @@ export default function HomePowerLines() {
 
         socketRef.current = ioSetup(io);
 
+        
+
         if(socketRef){
             ioHandle_pwaResponse    (socketRef.current, setMessage)
             ioHandle_gameStarted    (socketRef.current, setMessage,  gameState, setGameState)
@@ -178,6 +180,11 @@ export default function HomePowerLines() {
             if (socketRef.current) socketRef.current.disconnect()
         }
     },[])    
+
+    useEffect(()=>{
+        if(!socketRef.current) return
+        socketRef.current.emit("ping", Date.now())
+    })
 
     //todo play with friends lobby as separate route
     return (

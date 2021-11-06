@@ -3,6 +3,9 @@ import { useForm, ValidationError } from '@formspree/react';
 import head from './head.jpg'
 import PLmobile from './PLmobile.png'
 import PLlaptop from './PLlaptop.png'
+import video from './video.mp4'
+
+
 
 import styles from './styles/portfolio.module.css'
 
@@ -194,7 +197,9 @@ function Interests(props:{
             <p>In the near future I'm interested in mastering range of web technologies, including <b>React</b>, <b>Typescript</b>, <b>CSS</b> and learn more about software <b></b>testing, software <b>architecture</b>, <b>data structures</b> and <b>algorithms</b>. I'm also planning to use my knowledge of react for creating mobile apps by learning <b>React Native</b>.</p>
             <p>Besides programming I'm in love with <b>music production</b>, <b>piano</b> and <b>photography</b>.</p>
             <h1>MOTIVATION</h1>
-            <p>Since I saw the first computer in my life (around 1999) I was fascinated by technology. At about 13 y.o. I discovered Adobe Flash and ActionScript and created few very simple buggy games. Long story short, I decided to study medicine and become doctor. After 6 years of hard studying, I realized that <b>my obsession in technology in not matched by my interest in medicine</b>. After this realization, I used a little free time I had to learn web development.</p>
+            <p>Since I saw the first computer in my life (around 1999) I was fascinated by technology. At about 13 y.o. I discovered Adobe Flash and ActionScript and created few very simple games. After I decided to study medicine and become doctor, I realized I still enjoy technology and programming a lot more. In order not to fall into <span className={styles.fallacy}>sunk cost fallacy</span> I used a little free time I had to learn web development.</p>
+                
+               
             <a onClick={(e)=> props.handleClick(e, "contact")}>CONTACT ME</a>
 
         </div>
@@ -242,14 +247,19 @@ function Powerlines(props:{
                 </div>
                 <div className={styles.textArea}>
                         <p>Full-stack app, online multiplayer game with authentication built using React, Node, Typescript, Web Sockets and MongoDB.</p>
-                        <p>For live demo send it to friend or open one incognito tab. <b>Might take few seconds for heroku server to wake up.</b></p>
+                        <p>For live demo send it to friend or open one incognito tab.</p>
                         <a href="/powerlines">LIVE DEMO</a>
                         <a href="https://github.com/peterhutka/hoocreations">FRONTEND CODE </a>
                         <a href="https://github.com/peterhutka/HooProjectsServer">BACKEND CODE</a>
                         
-                    </div>
                 </div>
+                <video autoPlay loop muted>
+                    <source src={video} type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+                
             </div>
+        </div>
             
         
     )
