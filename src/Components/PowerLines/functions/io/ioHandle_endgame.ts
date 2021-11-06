@@ -12,7 +12,6 @@ export function ioHandle_endgame (
    
 
     socket.on("endgame", (msg: any)=>{
-        console.log("ENDGAME")
         if(msg === "L"){
             setMessage("Opponent destroyed you")
         } else if (msg === "W"){

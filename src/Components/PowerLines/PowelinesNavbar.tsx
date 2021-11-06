@@ -40,7 +40,7 @@ export default function PowelinesNavbar() {
                 <div className={styles.navbarWrapper}>
                     <span onClick={toggleMenu}>X</span>
                     <Link to={`${match.path}/leaderboard`} onClick={closeMenu}> Leaderboard </Link>
-                    <Link to={`${match.path}/register`} onClick={closeMenu}> Register </Link>
+                    {(!user) ? <Link to={`${match.path}/register`} onClick={closeMenu}> Register </Link> : null}
                     {(!user) ? <Link to={`${match.path}/login`} onClick={closeMenu}>Login</Link> : <LogoutWindow />}
                 </div>
             ) }

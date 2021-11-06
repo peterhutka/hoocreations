@@ -26,7 +26,6 @@ const Login = (props: any) => {
         }, {
             withCredentials: true
         }).then((res : AxiosResponse) => {
-            console.log("login response" , res.data)
             if (res.data === "success"){
                 updateUser({
                     from: "/login",

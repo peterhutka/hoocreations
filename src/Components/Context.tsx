@@ -15,10 +15,8 @@ export default function Context(props: PropsWithChildren<any>) {
         }, 
         history?: any
     ) => {
-        console.log("sending user request")
         axios.get(`${process.env.REACT_APP_SERVER_URL}/user`, {withCredentials: true})
         .then((res: AxiosResponse) => {   
-            console.log("recieving user request", res.data)
             setUser(res.data)  
             if(locationObject?.to && history){
                 history.push(locationObject.to)

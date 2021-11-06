@@ -7,7 +7,6 @@ export function ioHandle_pwaResponse (
     setMessage: React.Dispatch<React.SetStateAction<string>>
 ){
     socket.on("pwaResponse", (msg:any)=>{
-        console.log("REF WORKS ----------------")
         if (msg === "queued"){
             setMessage("U have been queed successfully")
         } else if (msg === "occupied"){
